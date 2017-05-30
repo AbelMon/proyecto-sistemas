@@ -11,5 +11,21 @@
     "umg_homework"
   ],
   "author": "Abel Monterroso (Rikolino)",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "express-validator": "^3.2.0",
+    "helmet": "^3.6.1",
+    "sequelize": "^3.30.4"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AbelMon/proyecto-sistemas.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AbelMon/proyecto-sistemas/issues"
+  },
+  "homepage": "https://github.com/AbelMon/proyecto-sistemas#readme"
 }
