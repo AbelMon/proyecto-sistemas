@@ -32,14 +32,6 @@ nav {
     color: #fff
 }
 
-.carousel-img {
-    width: 100%;
-    height: auto !important;
-    background-attachment: fixed;
-    overflow: hidden;
-    margin-top: -75px;
-}
-
 .carousel-img-container {
     height: 400px;
     overflow: hidden;
@@ -74,6 +66,11 @@ nav {
 
 p {
     font-family: 'Ubuntu', sans-serif;
+}
+
+a {
+    font-family: 'Ubuntu', sans-serif;
+}
 }
 
 .white-text {
@@ -115,5 +112,59 @@ p {
 
 footer {
     background-color: #363B38;
-    height: 200px;
+    height: 80px;
+}
+
+#header {
+    /*margin:auto;*/
+    background-color: #000;
+    font-family:Arial, Helvetica, sans-serif;
+    margin-bottom: 130px;
+}
+
+ul, ol {
+    list-style:none;
+}
+
+.nav > li {
+    float:left;
+}
+
+.nav li a {
+    background-color:#000;
+    color:#fff;
+    text-decoration:none;
+    padding:10px 12px;
+    display:block;
+}
+
+.nav li span {
+    background-color:#000;
+    color:#fff;
+    text-decoration:none;
+    padding:10px 12px;
+    display:block;
+}
+
+.nav li a:hover {
+    background-color:#434343;
+}
+
+.nav li ul {
+    display:none;
+    position:absolute;
+    min-width: 40%;
+}
+
+.nav li:hover > ul {
+    display:block;
+}
+
+.nav li ul li {
+    position:relative;
+}
+
+.nav li ul li ul {
+    right: -75%;
+    top:0px;
 }
