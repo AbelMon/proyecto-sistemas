@@ -11,7 +11,8 @@ var smtpTransport = require('nodemailer-smtp-transport');
 
 const pg = require("pg");
 const port = 3000;
-const connectionString = "postgres://postgres:@localhost:5432/SUSCRIPTORES";
+const connectionString = "postgres://postgres:admin@localhost:5432/SUSCRIPTORES";
+const responseMessages = require("./models/responseModel");
 
 app.use(helmet());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -79,34 +80,38 @@ app.post("/user", (req, res, next) => {
             return true;
         };
 
+
         if (handleError(err)) return;
 
         var name = req.body.name;
         var email = req.body.email;
-        var lastName = req.body.email;
-
+        var lastName = req.body.lastName;
 
         var sqlStatement = 'INSERT INTO "USUARIOS"("NOMBRE","EMAIL","APELLIDOS") VALUES($1,$2,$3)';
         var params = [name, email, lastName]
 
         client.query(sqlStatement, params, function(err1, result1) {
-                if (handleError(err1)) return;
+            if (handleError(err1)) {
+                res.status(responseMessages.getUserExistErrorMsg().status).send(responseMessages.getUserExistErrorMsg());
+                return;
+            }
 
                 //client.query('SELECT * FROM "USUARIOS" WHERE "EMAIL"= ' + email + ';', function(err2, result2) {
                   //  if (handleError(result2)) return;
 
-
-                    sendMail(email);
-                    done();
-                    res.status(201).send("usuario creado");
+            sendMail(email);
+            done();
+            res.status(
+                responseMessages.getUserCreatedMsg().status
+            ).send(
+                responseMessages.getUserCreatedMsg()
+            );
                 //});
 
             });
     });
 
 });
-
-
 
 
 
