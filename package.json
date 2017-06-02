@@ -17,6 +17,9 @@
     "express": "^4.15.3",
     "express-validator": "^3.2.0",
     "helmet": "^3.6.1",
+    "nodemailer": "^4.0.1",
+    "nodemailer-smtp-transport": "^2.7.4",
+    "pg": "^6.2.3",
     "sequelize": "^3.30.4"
   },
   "devDependencies": {},
